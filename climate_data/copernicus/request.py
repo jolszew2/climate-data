@@ -247,7 +247,7 @@ class CMIP6Experiment:
         default_factory=cmip6.Models.to_list())
     experiment: cmip6.Experiments = cmip6.Experiments.HISTORICAL
 
-    location = (1, 0, 0, 1) # [N, W, S, E]
+    location: tuple[int, int, int, int] = field(default=(1, 0, 0, 1))# [N, W, S, E]
 
     variable: cmip6.Variables = cmip6.Variables.TEMP
     time_step: str = cmip6.TemporalResolutions.MONTHLY
@@ -279,7 +279,7 @@ class CMIP6:
     experiments: list[cmip6.Experiments] = field(
         default_factory=cmip6.Experiments.to_list())
 
-    location = (1, 0, 0, 1) # [N, W, S, E]
+    location: tuple[int, int, int, int] = field(default=(1, 0, 0, 1)) # [N, W, S, E]
 
     variable: cmip6.Variables = cmip6.Variables.TEMP
     time_step: str = cmip6.TemporalResolutions.MONTHLY
